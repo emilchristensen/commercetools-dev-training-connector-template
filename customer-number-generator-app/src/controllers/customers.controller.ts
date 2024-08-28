@@ -13,13 +13,21 @@ const create = async (resource: Resource) => {
   const updateActions: Array<UpdateAction> = [];
 
   // TODO: Create the UpdateAction Object to return it to the client
-
+  const updateAction: UpdateAction = {
+    action: "setCustomerNumber",
+    // generate a number between 1000 and 1899
+    customerNumber: String(Math.floor(1000 + Math.random() * 900)),
+  };
+  
+  updateActions.push(updateAction);
 
   return { statusCode: 201, actions: updateActions };
 };
 
 // Controller for update actions
-// const update = (resource: Resource) => {};
+// const update = (resource: Resource) => {
+
+// };
 
 /**
  * Handle the order controller according to the action
